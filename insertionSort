@@ -1,0 +1,43 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+// insertion sort
+#include <stdio.h>
+void insertion_sort(int arr[],int n);
+
+int main()
+{
+    int arr[10],i,n;
+    printf("Enter the number of elements in array: ");
+    scanf("%d", &n);
+    
+    printf("Enter the elements: ");
+    for(i=0; i<n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    insertion_sort(arr, n);
+    
+    for(i=0; i<n; i++) {
+        printf("\n %d", arr[i]);
+    }
+}
+
+void insertion_sort(int arr[], int n) {
+    int i,j, temp;
+    
+    for(i=1; i<n; i++) {
+        temp=arr[i];
+        j=i-1;
+        while((temp<arr[j]) && (j>=0)) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = temp;
+    }
+}
