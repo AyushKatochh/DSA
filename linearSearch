@@ -1,0 +1,38 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+// linear search
+#include <stdio.h>
+
+int main()
+{
+    int arr[10], num, i, n,found=0, pos=-1;
+    printf("Enter the number of elements to be searched");
+    scanf("%d",&n);
+    
+    printf("Enter the elements:");
+    for(i=0; i<n; i++)
+    scanf("%d", &arr[i]);
+    
+    printf("Enter the element that has to be searched: ");
+    scanf("%d", &num);
+    
+    for(i=0; i<n; i++) {
+        if(arr[i] == num) {
+            found=1;
+            pos=i;
+            printf("%d is found in array at position: %d",num,i);
+            break;
+        }
+    }
+    if(found ==0) {
+        printf("element not present");
+    }
+    
+    return 0;
+}
